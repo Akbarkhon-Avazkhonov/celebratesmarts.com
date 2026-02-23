@@ -1,0 +1,146 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #1A1B4B;
+  --foreground: #E0E0E0;
+  --card: #1e1f55;
+  --card-foreground: #E0E0E0;
+  --popover: #1e1f55;
+  --popover-foreground: #E0E0E0;
+  --primary: #FFB347;
+  --primary-foreground: #1A1B4B;
+  --secondary: #232566;
+  --secondary-foreground: #E0E0E0;
+  --muted: #232566;
+  --muted-foreground: #a0a0b8;
+  --accent: #7FFFD4;
+  --accent-foreground: #1A1B4B;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: #ffffff;
+  --border: #2e3078;
+  --input: #2e3078;
+  --ring: #FFB347;
+  --chart-1: #FFB347;
+  --chart-2: #7FFFD4;
+  --chart-3: #E0E0E0;
+  --chart-4: #1A1B4B;
+  --chart-5: #232566;
+  --radius: 0.75rem;
+  --sidebar: #151640;
+  --sidebar-foreground: #E0E0E0;
+  --sidebar-primary: #FFB347;
+  --sidebar-primary-foreground: #1A1B4B;
+  --sidebar-accent: #232566;
+  --sidebar-accent-foreground: #E0E0E0;
+  --sidebar-border: #2e3078;
+  --sidebar-ring: #FFB347;
+
+  --nebula: #1A1B4B;
+  --nebula-light: #232566;
+  --amber: #FFB347;
+  --mint: #7FFFD4;
+  --stardust: #E0E0E0;
+}
+
+@theme inline {
+  --font-sans: var(--font-plus-jakarta), 'Plus Jakarta Sans', sans-serif;
+  --font-mono: var(--font-inter), 'Inter', sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-nebula: var(--nebula);
+  --color-nebula-light: var(--nebula-light);
+  --color-amber: var(--amber);
+  --color-mint: var(--mint);
+  --color-stardust: var(--stardust);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes drift {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 15px) scale(0.95); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.animate-drift {
+  animation: drift 20s ease-in-out infinite;
+}
+
+.glass-pill {
+  background: rgba(26, 27, 75, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(127, 255, 212, 0.15);
+}
+
+.glass-card {
+  background: rgba(30, 31, 85, 0.5);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(127, 255, 212, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
